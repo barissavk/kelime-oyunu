@@ -8,10 +8,13 @@ public class LevelLister : MonoBehaviour
 {
     public Button sceneButton;
     public Transform scrollView;
+    int sceneIndex;
 
     private void Start()
     {
+        sceneIndex = PlayerPrefs.GetInt("sceneData");
         ListLevels();
+        UnlockLevels();
     }
 
     private void ListLevels()
@@ -22,7 +25,16 @@ public class LevelLister : MonoBehaviour
         {
             sceneButton.GetComponentInChildren<Text>().text = (i - 1).ToString();
             sceneButton.GetComponent<OpenScene>().index = i;
+            sceneButton.interactable = false;
             Instantiate(sceneButton,scrollView);
+        }
+    }
+
+    private void UnlockLevels()
+    {
+        for (int i = 0; i < sceneIndex; i++)
+        {
+            scrollView.GetChild(i).GetComponent<Button>().interactable = true;
         }
     }
 }

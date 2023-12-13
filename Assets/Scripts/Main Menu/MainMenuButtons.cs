@@ -18,6 +18,15 @@ public class MainMenuButtons : MonoBehaviour
     public void StartGame()
     {
         FindObjectOfType<AudioManager>().Play("button");
+        if (!PlayerPrefs.HasKey("sceneData"))
+        {
+            PlayerPrefs.SetInt("sceneData", 1);
+        }
         SceneManager.LoadScene(1);
+    }
+
+    public void DeleteData()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
