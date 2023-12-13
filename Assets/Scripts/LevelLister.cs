@@ -7,9 +7,22 @@ using UnityEngine.UI;
 public class LevelLister : MonoBehaviour
 {
     public Button sceneButton;
+    public Transform scrollView;
 
-    public void Bas()
+    private void Start()
     {
-        Debug.Log("madafaka");
+        ListLevels();
+    }
+
+    private void ListLevels()
+    {
+        int indexCount = SceneManager.sceneCountInBuildSettings;
+
+        for (int i = 2; i < indexCount; i++)
+        {
+            sceneButton.GetComponentInChildren<Text>().text = (i - 1).ToString();
+            sceneButton.GetComponent<OpenScene>().index = i;
+            Instantiate(sceneButton,scrollView);
+        }
     }
 }

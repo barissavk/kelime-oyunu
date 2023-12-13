@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.InteropServices;
 using System.Linq;
+using UnityEngine.Experimental.Playables;
 
 public class UIButtons : MonoBehaviour
 {
@@ -75,12 +76,12 @@ public class UIButtons : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    // Delete a char.
-    public void DeleteChar()
+    public void RandomizeWords()
     {
-        if (placeHolder.text != string.Empty)
+        for (int t = 0; t < level.LetterObjects.Length; t++)
         {
-            placeHolder.text = placeHolder.text.Substring(0, placeHolder.text.Length - 1);
+            int r = Random.Range(t, level.LetterObjects.Length);
+            level.KeyBoardArea.transform.GetChild(t).SetSiblingIndex(r);
         }
     }
 

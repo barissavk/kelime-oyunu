@@ -1229,7 +1229,7 @@ GameObject:
   - component: {fileID: 8812893055954125823}
   - component: {fileID: 4792734741016156617}
   m_Layer: 5
-  m_Name: RandomButton (EDITLE)
+  m_Name: RandomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1339,7 +1339,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2721684059046621382}
         m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
-        m_MethodName: DeleteChar
+        m_MethodName: RandomizeWords
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
