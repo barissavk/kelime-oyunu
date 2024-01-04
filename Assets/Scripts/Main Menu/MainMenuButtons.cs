@@ -20,7 +20,7 @@ public class MainMenuButtons : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("button");
         if (!PlayerPrefs.HasKey("sceneData"))
         {
-            PlayerPrefs.SetInt("sceneData", 1);
+            PlayerPrefs.SetInt("sceneData", 2);
         }
         SceneManager.LoadScene(2);
     }

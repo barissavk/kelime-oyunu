@@ -27,7 +27,7 @@ public class SceneManage : MonoBehaviour
         {
             File.Create(location).Dispose();
             gameData.hint = 10;
-            gameData.sceneIndex = 1;
+            gameData.sceneIndex = 3;
             data = JsonUtility.ToJson(gameData, true);
             File.WriteAllText(location, data);
             LoadData();

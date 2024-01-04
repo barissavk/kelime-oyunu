@@ -32,9 +32,10 @@ public class LevelLister : MonoBehaviour
 
     private void UnlockLevels()
     {
-        for (int i = 0; i < sceneIndex; i++)
+        for (int i = 0; i < sceneIndex - 1; i++)
         {
             scrollView.GetChild(i).GetComponent<Button>().interactable = true;
+            Debug.Log("scene index: " + i);
         }
     }
 }

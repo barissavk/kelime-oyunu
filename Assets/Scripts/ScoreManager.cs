@@ -21,7 +21,6 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt("playerScore", 0);
             score = PlayerPrefs.GetInt("playerScore");
             score_max = PlayerPrefs.GetInt("maxScore");
             DisplayScore();

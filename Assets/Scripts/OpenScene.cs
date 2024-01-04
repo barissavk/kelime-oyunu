@@ -12,7 +12,9 @@ public class OpenScene : MonoBehaviour
         {
             SceneManager.LoadScene(index);
         }
-
-        SceneManager.LoadScene(sceneIndex);
+        else
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }

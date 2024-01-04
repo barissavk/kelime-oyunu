@@ -75,12 +75,10 @@ public class UIButtons : MonoBehaviour
     }
     IEnumerator WaitForScene()
     {
-
-
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("sceneData", sceneIndex);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     // Go to Main Menu
