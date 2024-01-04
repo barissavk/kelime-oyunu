@@ -13,7 +13,9 @@ public class UIButtons : MonoBehaviour
     public HintManager HintManager;
     public LevelGenerator level;
     public Text placeHolder;
-
+    public ScoreManager scoreManager;
+    public TimeManager timeManager;
+    public PlayfabManager playfabManager;
     private void Start()
     {
         for (int i = 0; i < level.addedWords.Length; i++)
@@ -35,23 +37,31 @@ public class UIButtons : MonoBehaviour
         {
             buttonHint.interactable = true;
         }
+
+        playfabManager = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PlayfabManager>();
     }
+
 
     public void CheckWord()
     {
         for (int i = 0; i < level.addedWords.Length; i++)
         {
-            if (placeHolder.text == level.addedWords[i].GetComponent<WordContainer>().word)
+            if (level.addedWords[i])
             {
-                Debug.Log("Bulundu");
-                for (int a = 0; a < level.addedWords[i].transform.childCount; a++)
+                if (placeHolder.text == level.addedWords[i].GetComponent<WordContainer>().word)
                 {
-                    level.addedWords[i].transform.GetChild(a).GetChild(0).gameObject.SetActive(true);
-                    level.addedWords[i].transform.GetChild(a).GetChild(0).gameObject.GetComponent<Text>().CrossFadeAlpha(1,0.01f,false);
-                    level.LetterData.Remove(level.addedWords[i].transform.GetChild(a).GetChild(0).gameObject);
+                    Debug.Log("Bulundu");
+                    for (int a = 0; a < level.addedWords[i].transform.childCount; a++)
+                    {
+                        level.addedWords[i].transform.GetChild(a).GetChild(0).gameObject.SetActive(true);
+                        level.addedWords[i].transform.GetChild(a).GetChild(0).gameObject.GetComponent<Text>().CrossFadeAlpha(1, 0.01f, false);
+                        level.LetterData.Remove(level.addedWords[i].transform.GetChild(a).GetChild(0).gameObject);
+                    }
+                    --level.totalWordNumber;
+                    scoreManager.CalculateScore(level.addedWords[i].GetComponent<WordContainer>().word.Length, timeManager.secs);
+                    level.addedWords[i].transform.SetAsLastSibling();
+                    level.addedWords[i] = null;
                 }
-                --level.totalWordNumber;
-                level.addedWords[i].transform.SetAsLastSibling();
             }
         }
         placeHolder.text = string.Empty;
@@ -59,16 +69,18 @@ public class UIButtons : MonoBehaviour
         if (level.totalWordNumber == 0)
         {
             Debug.Log("Kazandýn.");
+            playfabManager.SendLeaderboard(scoreManager.score_max);
             StartCoroutine(WaitForScene());
         }
+    }
+    IEnumerator WaitForScene()
+    {
 
-        IEnumerator WaitForScene()
-        {
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            PlayerPrefs.SetInt("sceneData", sceneIndex);
-            yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene(1);
-        }
+
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("sceneData", sceneIndex);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(1);
     }
 
     // Go to Main Menu

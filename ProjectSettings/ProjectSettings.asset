@@ -159,7 +159,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.SumerGames.KelimeAvcisi
     Lumin: com.DefaultCompany.com.unity.template.mobile2D
-    Standalone: com.BarisSavk.KelimeOyunu
+    Standalone: com.BarisSavk.finalkelimeoyunu
     iPhone: com.SumerGames.KelimeAvcisi
     tvOS: com.DefaultCompany.com.unity.template.mobile2D
   buildNumber:
