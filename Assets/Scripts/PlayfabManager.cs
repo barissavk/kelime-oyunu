@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
 using System.Text;
@@ -10,6 +11,8 @@ public class PlayfabManager : MonoBehaviour
     public static PlayfabManager instance;
     void Start()
     {
+
+        // Objeyi farklı sahnelerde de kullanma.
         if (instance == null)
         {
             instance = this;
@@ -22,7 +25,15 @@ public class PlayfabManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        // Playfab' e login işlemi.
         Login();
+
+        // Eğer leaderboard sahnesiyse leaderboardu getirme.
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (sceneIndex == 1)
+        {
+            GetLeaderboard();
+        }
     }
 
     void Login()

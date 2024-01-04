@@ -21,9 +21,9 @@ public class LevelLister : MonoBehaviour
     {
         int indexCount = SceneManager.sceneCountInBuildSettings;
 
-        for (int i = 2; i < indexCount; i++)
+        for (int i = 3; i < indexCount; i++)
         {
-            sceneButton.GetComponentInChildren<Text>().text = (i - 1).ToString();
+            sceneButton.GetComponentInChildren<Text>().text = (i - 2).ToString();
             sceneButton.GetComponent<OpenScene>().index = i;
             sceneButton.interactable = false;
             Instantiate(sceneButton,scrollView);

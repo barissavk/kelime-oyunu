@@ -8,7 +8,7 @@ public class MainMenuButtons : MonoBehaviour
         Application.targetFrameRate = 45;
     }
 
-    // Uygulamadan çýk.
+    // Uygulamadan ??k.
     public void ExitGame()
     {
         FindObjectOfType<AudioManager>().Play("button");
@@ -22,7 +22,7 @@ public class MainMenuButtons : MonoBehaviour
         {
             PlayerPrefs.SetInt("sceneData", 1);
         }
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void DeleteData()

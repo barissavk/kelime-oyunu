@@ -5,8 +5,14 @@ public class OpenScene : MonoBehaviour
 {
     public int index;
 
-    public void SceneOpener()
+    public void SceneOpener(int sceneIndex)
     {
-        SceneManager.LoadScene(index);
+        int activeScene = SceneManager.GetActiveScene().buildIndex;
+        if (activeScene == 2)
+        {
+            SceneManager.LoadScene(index);
+        }
+
+        SceneManager.LoadScene(sceneIndex);
     }
 }
