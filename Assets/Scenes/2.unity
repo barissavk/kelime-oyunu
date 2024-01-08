@@ -1934,6 +1934,14 @@ PrefabInstance:
       propertyPath: LetterObjects.Array.data[5]
       value: 
       objectReference: {fileID: 1633747079}
+    - target: {fileID: 2721684059389607840, guid: 22eba4a4b8f3ead45b5a9edb79b62994, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 121.40003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721684059389607840, guid: 22eba4a4b8f3ead45b5a9edb79b62994, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60.69999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22eba4a4b8f3ead45b5a9edb79b62994, type: 3}
 --- !u!224 &701837299 stripped
