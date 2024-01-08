@@ -95,6 +95,7 @@ public class PlayfabManager : MonoBehaviour
     {
         Debug.Log("Updated username.");
         mainMenu.gameObject.SetActive(true);
+        getUsername.gameObject.SetActive(false);
     }
 
     void OnError(PlayFabError error)

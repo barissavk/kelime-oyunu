@@ -880,7 +880,7 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
-    Purchasing: 1
+    Purchasing: 0
     UDP: 0
     Unity Ads: 0
   luminIcon:
@@ -897,11 +897,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 105f7ac4-24b7-4ac2-8584-031c9ed49f7b
+  cloudProjectId: 7717ef89-2291-4ae9-bab5-9272986d8539
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: "Kelime Avc\u0131s\u0131"
-  organizationId: sumer-games
+  projectName: Kelime Oyunu
+  organizationId: baris-savk-gmail-com
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
