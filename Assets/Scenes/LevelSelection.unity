@@ -321,7 +321,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "B\xD6L\xDCMLER"
+  m_Text: LEVELS
 --- !u!222 &54201997
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 119505346}
   m_HandleRect: {fileID: 119505345}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
